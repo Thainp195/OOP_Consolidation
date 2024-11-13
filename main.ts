@@ -1,15 +1,13 @@
-import { FullTimeEmployee } from './src/FullTimeEmployee'; // Import the FullTimeEmployee class
-import { PartTimeEmployee } from './src/PartTimeEmployee'; // Import the PartTimeEmployee class
-import { Department } from './src/Department'; // Import the Department class
+import { FullTimeEmployee } from './src/FullTimeEmployee';
+import { PartTimeEmployee } from './src/PartTimeEmployee';
+import { Department } from './src/Department';
 
 // Create a new department
 const department = new Department();
 
-// Create a full-time employee with name, base salary, and bonus
-const fullTimeEmp = new FullTimeEmployee("ThaiNguyen", 5000, 1000);
-
-// Create a part-time employee with name, hourly rate, and hours worked
-const partTimeEmp = new PartTimeEmployee("PhiCao", 20, 80);
+// Create full-time and part-time employees
+const fullTimeEmp = new FullTimeEmployee("ThaiNguyen", 5000, 0.10); // 10% bonus
+const partTimeEmp = new PartTimeEmployee("PhiCao", 20, 80); // salary per hour, total hourwork
 
 // Add employees to the department
 department.addEmployee(fullTimeEmp);
