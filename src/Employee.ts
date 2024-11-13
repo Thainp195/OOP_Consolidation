@@ -1,7 +1,7 @@
 // Base class Employee
 export class Employee {
     private name: string; // Employee's name (private, not accessible outside)
-    private baseSalary: number; // Base salary (private, not accessible outside)
+    public baseSalary: number; // Base salary 
 
     constructor(name: string, baseSalary: number) {
         this.name = name;
