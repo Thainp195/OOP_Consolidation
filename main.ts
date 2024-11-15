@@ -6,8 +6,8 @@ import { Department } from './src/Department';
 const department = new Department();
 
 // Create full-time and part-time employees
-const fullTimeEmp = new FullTimeEmployee("ThaiNguyen", 5000, 0.10); // baseSalary, 10% bonus
-const partTimeEmp = new PartTimeEmployee("PhiCao", 20, 80); // salary per hour, total hourwork
+const fullTimeEmp = new FullTimeEmployee("ThaiNguyen", 5000, 1000);
+const partTimeEmp = new PartTimeEmployee("PhiCao", 20, 80);
 
 // Add employees to the department
 department.addEmployee(fullTimeEmp);

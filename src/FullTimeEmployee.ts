@@ -1,5 +1,4 @@
-//class FullTimeEmployee//
-import { Employee } from './Employee'; // Import the base class
+import { Employee } from './Employee';
 
 export class FullTimeEmployee extends Employee {
     private bonusPercentage: number; // Bonus percentage

@@ -1,5 +1,4 @@
-//class PartTimeEmployee//
-import { Employee } from './Employee'; // Import the base class
+import { Employee } from './Employee';
 
 export class PartTimeEmployee extends Employee {
     private hourlyRate: number; // Hourly rate
