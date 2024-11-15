@@ -1,31 +1,27 @@
-import { Employee } from './Employee';
+//class FullTimeEmployee//
+import { Employee } from './Employee'; // Import the base class
 
-// Subclass FullTimeEmployee inherits from Employee
 export class FullTimeEmployee extends Employee {
-    private bonusPercentage: number; // Bonus percentage based on base salary (private)
+    private bonusPercentage: number; // Bonus percentage
 
     constructor(name: string, baseSalary: number, bonusPercentage: number) {
-        super(name, baseSalary); // Call the parent class constructor
-        this.bonusPercentage = bonusPercentage;
+        super(name, baseSalary); // Call the parent constructor
+        this.bonusPercentage = bonusPercentage; // Set bonus percentage
     }
 
-    // Override the salary calculation method from the parent class (public)
-    public calculateSalary(): number {
-        const baseSalary = super.calculateSalary(); // Call parent's calculateSalary
-        const bonus = this.calculateBonus(); // Calculate bonus
-        const deductions = this.calculateDeductions(); // Calculate deductions
-
-        // Calculate salary including base, bonus, and deductions
-        return baseSalary + bonus - deductions; 
-    }
-
-    // Overloaded method for calculating bonus (protected)
+    // Override calculateBonus to use the specific bonus percentage
     protected calculateBonus(): number {
-        return super.calculateBonus() + (this.bonusPercentage * super.calculateSalary()); // Include additional bonus
+        return this.baseSalary * this.bonusPercentage; 
     }
 
-    // Overloaded method for calculating deductions (protected)
-    protected calculateDeductions(): number {
-        return super.calculateDeductions(); // Call parent's deductions calculation
+    // Overloading calculateSalary
+    public calculateSalary(): number; // Method declaration for no parameters
+    public calculateSalary(additionalBonus: number): number; // Overloaded version for additional bonus
+    public calculateSalary(additionalBonus?: number): number { // Implementation
+        const baseSalary = super.calculateSalary(); // Call parent's calculateSalary
+        if (additionalBonus !== undefined) {
+            return baseSalary + additionalBonus; // Add additional bonus if provided
+        }
+        return baseSalary; // Return base salary if no additional bonus
     }
 }
